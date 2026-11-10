@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.18">
+  <!-- Uzbek Islamic Star / Girih Geometric Lattice Pattern -->
+  <g transform="translate(200, 200)">
+    <circle r="180" stroke-width="1.2" stroke-dasharray="4 4" />
+    <circle r="130" stroke-width="1" />
+    <circle r="80" stroke-width="1.5" />
+    <polygon points="0,-180 180,0 0,180 -180,0" stroke-width="1.2" />
+    <polygon points="-127,-127 127,-127 127,127 -127,127" stroke-width="1.2" />
+    <!-- 8-pointed star rotated -->
+    <g transform="rotate(22.5)">
+      <polygon points="0,-160 160,0 0,160 -160,0" stroke-width="1" />
+      <polygon points="-113,-113 113,-113 113,113 -113,113" stroke-width="1" />
+    </g>
+    <!-- 16 rays / petals -->
+    <path d="M0,0 L0,-180 M0,0 L0,180 M0,0 L-180,0 M0,0 L180,0" stroke-width="1" />
+    <path d="M0,0 L127,127 M0,0 L-127,-127 M0,0 L127,-127 M0,0 L-127,127" stroke-width="1" />
+    <path d="M0,0 L69,166 M0,0 L-69,-166 M0,0 L166,69 M0,0 L-166,-69" stroke-width="0.8" />
+    <path d="M0,0 L-69,166 M0,0 L69,-166 M0,0 L-166,69 M0,0 L166,-69" stroke-width="0.8" />
+    <!-- Interlocking rosettes -->
+    <circle cx="0" cy="-130" r="50" stroke-width="1" />
+    <circle cx="0" cy="130" r="50" stroke-width="1" />
+    <circle cx="-130" cy="0" r="50" stroke-width="1" />
+    <circle cx="130" cy="0" r="50" stroke-width="1" />
+  </g>
+</svg>
+

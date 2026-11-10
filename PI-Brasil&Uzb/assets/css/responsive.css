@@ -1,0 +1,233 @@
+/**
+ * =====================================================================
+ * RESPONSIVIDADE — ADAPTAÇÃO MOBILE-FIRST E BREAKPOINTS
+ * Celulares a partir de 320px até Monitores Ultrawide
+ * =====================================================================
+ */
+
+/* =====================================================================
+   BREAKPOINT: TABLETS E CELULARES (<= 992px)
+===================================================================== */
+@media (max-width: 992px) {
+  /* Layout do Cabeçalho e Menu Mobile */
+  .menu-toggle {
+    display: flex;
+    z-index: 1100;
+  }
+
+  .nav-principal {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: -6px 0 24px rgba(8, 43, 80, 0.18);
+    flex-direction: column;
+    padding: calc(var(--header-height) + 20px) 24px 30px;
+    transition: right var(--transition-normal);
+    z-index: 1050;
+    overflow-y: auto;
+  }
+
+  .nav-principal.aberto {
+    right: 0;
+  }
+
+  .nav-lista {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 14px 16px;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .nav-link.ativo::after {
+    left: 0;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-md);
+    margin: 4px 0 8px 12px;
+    display: flex;
+  }
+
+  /* Overlay de Fundo no Menu Mobile */
+  body.menu-aberto::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8, 43, 80, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1040;
+  }
+
+  /* Animação do Botão Hambúrguer */
+  .menu-toggle.ativo .hamburguer-linha:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.ativo .hamburguer-linha:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.ativo .hamburguer-linha:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Grids Principais */
+  .hero-grid,
+  .hero-cultural-grid,
+  .hero-gastrobar-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .feiras-principais-grid {
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+  }
+
+  .paises-integracao-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pais-bloco.uzbequistao,
+  .pais-bloco.brasil {
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .integracao-aperto {
+    margin: -10px auto;
+  }
+
+  .arquitetura-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rodape-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* =====================================================================
+   BREAKPOINT: SMARTPHONES E TABLETS MENORES (<= 768px)
+===================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .logo-textos {
+    display: none; /* Em telas muito estreitas mantemos os dois brasões limpos */
+  }
+
+  .mini-cards-flutuantes {
+    position: static;
+    margin-top: 14px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .painel-uz-info {
+    grid-template-columns: 1fr;
+  }
+
+  .arquitetura-thumbs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gastrobar-pilares {
+    grid-template-columns: 1fr;
+  }
+
+  .cardapio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rodape-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-dialog {
+    max-height: 94vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-cabecalho-img {
+    height: 180px;
+  }
+
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .lightbox-nav-btn.prev { left: 8px; }
+  .lightbox-nav-btn.next { right: 8px; }
+}
+
+/* =====================================================================
+   BREAKPOINT: DISPOSITIVOS ULTRA COMPACTOS (<= 480px)
+===================================================================== */
+@media (max-width: 480px) {
+  .logo-brasao {
+    height: 38px;
+  }
+
+  .hero-botoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-botoes .btn {
+    width: 100%;
+  }
+
+  .cardapio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pais-bloco {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pais-emblema-circulo {
+    margin: 0 auto;
+  }
+
+  .filtros-container {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filtro-btn {
+    flex-shrink: 0;
+  }
+}
+

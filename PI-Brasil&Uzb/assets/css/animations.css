@@ -1,0 +1,93 @@
+/**
+ * =====================================================================
+ * ANIMAÇÕES E TRANSIÇÕES SUTIS
+ * Respeito obrigatório a prefers-reduced-motion (WCAG 2.2 AA)
+ * =====================================================================
+ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 155, 112, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 155, 112, 0);
+  }
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.anim-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.anim-flutuar {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* =====================================================================
+   ACESSIBILIDADE: PREFERS-REDUCED-MOTION
+   Desativa ou reduz animações e transições quando solicitado pelo usuário
+===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .anim-flutuar {
+    animation: none !important;
+  }
+
+  .hero-foto-panoramica:hover img,
+  .lenda-card:hover .lenda-card-img-wrap img.lenda-img,
+  .galeria-item:hover img {
+    transform: none !important;
+  }
+}
+
