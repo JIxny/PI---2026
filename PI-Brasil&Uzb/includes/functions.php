@@ -427,14 +427,6 @@ function get_static_galeria(): array
             'desc' => 'Casarios coloniais, gastronomia afro-brasileira e sincretismo cultural vibrante.'
         ],
         [
-            'id' => 11,
-            'titulo' => 'Estande Cultural Brasil & Uzbequistão',
-            'categoria' => 'feiras',
-            'pais' => 'ambos',
-            'img' => 'assets/img/feiras/estande-cultural.jpg',
-            'desc' => 'Intercâmbio estudantil com materiais didáticos, bandeiras e artefatos de ambos os países.'
-        ],
-        [
             'id' => 12,
             'titulo' => 'Samsas Douradas no Forno',
             'categoria' => 'gastronomia',
